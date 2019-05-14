@@ -1,0 +1,66 @@
+<html>
+<head>
+  <title>StoryPlaces</title>
+  <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="//d1l4stvdmqmdzl.cloudfront.net/3.9.6/mongoose.js"></script>
+
+  <link rel="stylesheet" type="text/css" href="/stylesheet.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body onresize="zoomTest()" >
+  <div class="navbar">
+    <div class="dropdown">
+      <button class="dropbtn" onmouseover="showPages()">Pages
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div id='shPages' class="dropdown-content">
+
+      </div>
+    </div>
+    <div class="dropdown">
+      <button class="dropbtn" onmouseover="showChapters()">Chapters
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div id='shChapters' class="dropdown-content">
+
+      </div>
+    </div>
+    <div class="dropdown">
+      <button class="dropbtn" onmouseover="showChapters()">Constraints
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div id='shConstraints' class="dropdown-content">
+
+      </div>
+    </div>
+    <a href="#help">Help</a>
+
+    <select id="operatorCmb" class="pageBtn" onchange="createOperator()">
+      <option value="" selected disabled hidden>Add Operator</option>
+      <option value="and">AND</option>
+      <option value="or">OR</option>
+    </select>
+    <button class="pageBtn" onclick="createChapter()">New Chapter</button>
+    <button class="pageBtn" onclick="addPage()">New Page</button>
+  </div>
+
+  <div class="bg">
+    <div class="row" id="test">
+      <div class="column" id="svgDiv"></div>
+      <div id="edit" class="hideDiv">
+
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <button class="funcBtn" onclick="exportStory()">Export story</button>
+  </div>
+
+  <script src="authoring.js"></script>
+
+</body>
+
+</html>
